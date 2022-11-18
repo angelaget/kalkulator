@@ -24,7 +24,7 @@
         <button onclick="getOperator(this.innerHTML)">*</button>
         <button onclick="getOperator(this.innerHTML)">/</button>
         <button onclick="calculateFinal()">=</button>
-        <button onclick="reSet()">C</button>
+        <button onclick="document.location.reload(true)">C</button>
     </div>
 
     <div>
@@ -83,24 +83,10 @@
 
             console.log(result);
             resultBox.innerHTML = result;
+
+            const audio = new Audio('/mixkit-air-zoom-vacuum-2608.wav');
+            audio.play();
         }
-
-        function reSet() {
-            resultBox.innerHTML = '';
-            clearValues();
-        }
-
-        function clearValues() {
-            let output1 = null;
-            let output2 = null;
-            let num1 = 0;
-            let num2 = 0;
-            let result = 0;
-            let operator = '';
-            console.log('After reset, num1, num2, result->', output1, output2, num1, num2, result, operator)
-        }
-
-
     </script>
 </body>
 
