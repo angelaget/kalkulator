@@ -1,6 +1,7 @@
-<html
+<html>
 <head>
     <link rel="stylesheet" href="style.css"></link>
+    <title>The Bombshell Calculator</title>
 </head>
 
 <body>
@@ -33,6 +34,7 @@
 
     <script>
         let resultBox = document.getElementById('results')
+        let output1 = ''
         let output2 = '';
         let num1 = '';
         let num2 = '';
@@ -41,15 +43,14 @@
 
         function display1(x) {
             if(operator == '') {
-                output1 = '';
                 for(i = 0; i <= x.length; i++){
                 output1 = output1 + x.charAt(i);
                 }
             
-                resultBox.innerHTML += x
+                resultBox.innerHTML = output1;
 
-                num1 = parseInt(output1)
-                console.log("num1 is ->", num1)
+                num1 = parseInt(output1);
+                console.log("num1 is ->", num1);
             }
         }
 
@@ -68,7 +69,7 @@
                 output2 = output2 + x.charAt(i);
                 }
 
-                resultBox.innerHTML += x
+                resultBox.innerHTML = output2
 
                 num2 = parseInt(output2)
                 console.log("num2 is ->", num2)
