@@ -6,16 +6,16 @@
 <body>
     <h1>😀 Let's calculate 😀</h1>
     <div id="buttons">
-        <button onclick="display(this.innerHTML)">1</button>
-        <button onclick="display(this.innerHTML)">2</button>
-        <button onclick="display(this.innerHTML)">3</button>
-        <button onclick="display(this.innerHTML)">4</button>
-        <button onclick="display(this.innerHTML)">5</button>
-        <button onclick="display(this.innerHTML)">6</button>
-        <button onclick="display(this.innerHTML)">7</button>
-        <button onclick="display(this.innerHTML)">8</button>
-        <button onclick="display(this.innerHTML)">9</button>
-        <button onclick="display(this.innerHTML)">0</button>
+        <button id='button' onclick="display(this.innerHTML)">1</button>
+        <button id='button' onclick="display(this.innerHTML)">2</button>
+        <button id='button' onclick="display(this.innerHTML)">3</button>
+        <button id='button' nclick="display(this.innerHTML)">4</button>
+        <button id='button' onclick="display(this.innerHTML)">5</button>
+        <button id='button' onclick="display(this.innerHTML)">6</button>
+        <button id='button' onclick="display(this.innerHTML)">7</button>
+        <button id='button' onclick="display(this.innerHTML)">8</button>
+        <button id='button' onclick="display(this.innerHTML)">9</button>
+        <button id='button' onclick="display(this.innerHTML)">0</button>
     </div>
 
     <div id="operators">
@@ -27,7 +27,9 @@
         <button onclick="clear()">C</button>
     </div>
 
-    <div id="results" style="background-color: white"></div>
+    <div>
+        <div id="results"></div>
+    </div>
 
     <script>
         let resultBox = document.getElementById('results')
@@ -51,7 +53,8 @@
         function getOperator(z) {
             operator = z;
 
-            getNum2();
+            document.getElementById("button").onclick = function() {getNum2()};
+            
         }
 
         function getNum2(y) {
