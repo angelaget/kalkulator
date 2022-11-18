@@ -1,0 +1,95 @@
+<html
+<head>
+    <link rel="stylesheet" href="style.css"></link>
+</head>
+
+<body>
+    <h1>😀 Let's calculate 😀</h1>
+    <div id="buttons">
+        <button onclick="display(this.innerHTML)">1</button>
+        <button onclick="display(this.innerHTML)">2</button>
+        <button onclick="display(this.innerHTML)">3</button>
+        <button onclick="display(this.innerHTML)">4</button>
+        <button onclick="display(this.innerHTML)">5</button>
+        <button onclick="display(this.innerHTML)">6</button>
+        <button onclick="display(this.innerHTML)">7</button>
+        <button onclick="display(this.innerHTML)">8</button>
+        <button onclick="display(this.innerHTML)">9</button>
+        <button onclick="display(this.innerHTML)">0</button>
+    </div>
+
+    <div id="operators">
+        <button onclick="getOperator(this.innerHTML)">+</button>
+        <button onclick="getOperator(this.innerHTML)">-</button>
+        <button onclick="getOperator(this.innerHTML)">*</button>
+        <button onclick="getOperator(this.innerHTML)">/</button>
+        <button onclick="calculateFinal()">=</button>
+        <button onclick="clear()">C</button>
+    </div>
+
+    <div id="results" style="background-color: white"></div>
+
+    <script>
+        let resultBox = document.getElementById('results')
+        let output1 = '';
+        let output2 = '';
+        let num1 = '';
+        let num2 = '';
+        let operator = '';
+        let result = 0;
+
+        function display(x) {
+            for(i = 0; i <= x.length; i++){
+                output1 = output1 + x.charAt(i);
+            }
+            resultBox.innerHTML += x
+
+            num1 = parseInt(output1)
+            console.log("num1 is ->", num1)
+        }
+
+        function getOperator(z) {
+            operator = z;
+
+            getNum2();
+        }
+
+        function getNum2(y) {
+            for(let i = 0; i <= y.length; i++){
+                output2 = output2 + y.charAt(i);
+            }
+
+            resultBox.innerHTML += y;
+
+            num2 = parseInt(output2);
+            console.log("num2 is ->", num2);
+        }
+
+        function calculateFinal(num1, num2) {            
+            if(operator == '+') result = num1 + num2;
+            if(operator == '-') result = num1 - num2;
+            if(operator == '*') result = num1 * num2;
+            if(operator == '/') result = num1 / num2;
+
+            console.log(result);
+
+            resultBox.innerHTML = result;
+        }
+
+        function clear() {
+            output1 = '';
+            output2 = '';
+            num1 = '';
+            num2 = '';
+            operator = '';
+            result = 0;
+
+            resultBox.innerHTML = result
+
+            console.log('After reset, num1, num2, result->', num1, num2, result)
+        }
+
+    </script>
+</body>
+
+</html>
